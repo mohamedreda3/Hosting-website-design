@@ -3,6 +3,7 @@
     scroll-behavior: smooth;
     position: relative;
     font-family: 'Tajawal', sans-serif;
+    user-select: none;
 }
 
 /* #b3ccff #1f69ff #6b9cff */
@@ -644,3 +645,4 @@ h2 {
 .he-1{
     min-height: 72vh;
 }
+
