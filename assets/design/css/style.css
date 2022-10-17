@@ -1,0 +1,646 @@
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    position: relative;
+    font-family: 'Tajawal', sans-serif;
+}
+
+/* #b3ccff #1f69ff #6b9cff */
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+body>* {
+    overflow: hidden;
+}
+
+header {
+    width: 100%;
+    min-height: 80vh;
+}
+
+header nav {
+    min-height: 60px;
+    padding: 5px 15px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.logo a img {
+    width: 100px;
+}
+
+.menu span {
+    display: block;
+    width: 30px;
+    height: 1px;
+    background: black;
+    transition: 0.4s ease-in-out;
+    margin: 7px auto;
+}
+
+.menu {
+    width: 50px;
+    height: 31px;
+    cursor: pointer;
+    display: none;
+}
+
+.menu.active span:nth-child(1) {
+    rotate: z -45deg;
+    translate: 0px 7px;
+}
+
+.menu.active span:nth-child(2) {
+    width: 0;
+}
+
+
+.menu.active span:nth-child(3) {
+    rotate: z 45deg;
+    translate: -1px -9px;
+}
+
+
+ul.navbar {
+    width: 600px;
+    display: flex;
+    align-items: center;
+    gap: 19px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    direction: rtl;
+    background-color: transparent;
+    z-index: 9999999999999;
+}
+
+ul.navbar a {
+    display: inline-block;
+    min-width: 80px;
+    padding: 10px 12px;
+    transition: 0.4s ease-in-out;
+    text-decoration: none;
+    border-radius: 3px;
+    text-align: center;
+    font-weight: 700;
+    color: black;
+}
+
+ul.navbar a.active {
+    background-color: #5484e5;
+    color: white;
+}
+
+ul.navbar a:hover {
+    background-color: #b3ccff;
+    color: #000000;
+}
+
+.banner img {
+    width: 485px;
+}
+
+.cl-1 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    padding: 8px 0;
+    gap: 19px;
+}
+
+.banner {
+    padding: 12px;
+}
+
+.cl-3 {
+    direction: rtl;
+    width: 100%;
+}
+
+.banner h1,
+.banner p {
+    margin: 5px 0;
+    width: 100%;
+}
+
+.cl-2 {
+    width: 180px;
+    background-color: #5484e5;
+    color: white;
+    transition: 0.3s ease-in-out;
+    padding: 10px 19px;
+    margin: 10px 0;
+    border-radius: 7px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+}
+
+.cl-2 svg {
+    margin-right: 10px;
+    transition: 0.3s ease-in-out;
+    translate: 7px;
+    opacity: 0;
+}
+
+.cl-2:hover svg {
+    translate: 0;
+    opacity: 1;
+}
+
+.banner figure span {
+    display: flex;
+    align-items: center;
+    min-width: 90%;
+    direction: rtl;
+    height: 50px;
+    position: absolute;
+    padding: 15px 10px;
+    background: white;
+    box-shadow: 3.1px 3px 7px -3px grey;
+    bottom: 0;
+    border-radius: 6px;
+}
+
+.cl-11 {
+    margin: 0.1px auto;
+    width: fit-content;
+    direction: rtl;
+}
+
+.cl-6:before {
+    content: '';
+    width: 100%;
+    height: 0.9px;
+    position: absolute;
+    bottom: 0;
+    background: #5484e5;
+    left: 50%;
+    translate: -50% 0;
+}
+
+.cl-6 {
+    display: block;
+    margin: auto;
+    text-align: center;
+    color: #000000;
+    width: fit-content;
+    padding: 3px 12px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.main-about {
+    min-width: 243px;
+    font-size: 13px;
+}
+
+.about-main {
+    width: 100%;
+    padding: 10px 15px;
+}
+
+.about-main h1 {
+    color: #3472ef;
+}
+
+.about-main p {
+    max-width: 500px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cl-4 p {
+    color: rgba(128, 128, 128, 0.728);
+}
+
+.main figure {
+    margin: 0;
+    padding: 5px;
+}
+
+.main figure img {
+    width: 300px;
+    box-shadow: 3.1px 3px 7px -3px grey;
+    border-radius: 5px;
+    z-index: 9;
+    background: white;
+    left: -11px;
+}
+
+.main figure::before,
+.main figure::after {
+    content: '';
+    width: 108%;
+    height: 91%;
+    border: 2.3px solid;
+    border-radius: 7px;
+    border-left: 0;
+    position: absolute;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.main figure::before {
+    left: -6px;
+    top: -4%;
+    color: #5484e5;
+    border-color: currentColor;
+    width: 104%;
+    z-index: -2;
+}
+
+.main figure::after {
+    left: -6px;
+    color: #b3ccff;
+    bottom: -4%;
+    border-color: currentColor;
+}
+
+.cl-5 .logo {
+    position: absolute;
+    top: 0;
+    z-index: 99;
+}
+
+.cl-5 .logo img {
+    width: 170px;
+    box-shadow: none;
+}
+
+.cl-7 {
+    color: #154199;
+    margin: 0;
+    margin-left: auto;
+    font-weight: 800;
+    text-align: right;
+}
+
+.cl-7::before {
+    content: none;
+}
+
+.cl-4 {
+    margin: 10px 0;
+    padding: 8px 0;
+}
+
+.cl-8 {
+    margin: 0;
+    margin-left: auto;
+}
+
+em {
+    font-style: normal;
+    color: #3472ef;
+    margin: 0 5px;
+    font-weight: 800;
+}
+
+h2 {
+    margin: auto 0;
+}
+
+.cl-10 {
+    width: 263px;
+    direction: rtl;
+    min-height: 300px;
+    background: white;
+    box-shadow: 3.1px 3px 7px -3px grey;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 12.4px;
+    text-align: center;
+}
+
+.cl-10 figure {
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    background: #dee7f8;
+    min-height: 95px;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 12px;
+}
+
+.cl-10 figure span {
+    display: block;
+}
+
+.cl-10 figure img {
+    width: 96px;
+}
+
+.cl-19 {
+    padding: 13px;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+
+.cl-12 {
+    width: fit-content;
+    margin: auto;
+    padding: 5px;
+}
+
+.cl-13 {
+    margin: 17px 0;
+    list-style: none;
+    text-align: right;
+    padding: 0 5px;
+}
+
+.cl-13 li {
+    width: 100%;
+    font-size: 14px;
+    font-weight: 800;
+    margin: 8px 0;
+    padding-right: 15px;
+}
+
+.cl-13 li:before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: absolute;
+    right: 0;
+    background-color: #3472ef;
+    top: 50%;
+    translate: 0 -50%;
+}
+
+.cl-9 {
+    margin-right: 10px;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.cl-9:before {
+    content: '';
+    background-color: #b3ccff;
+}
+
+.cl-14 {
+    display: block;
+    border: 0.1px solid #3472ef;
+    border-radius: 2px;
+    text-decoration: none;
+    margin: 5px auto 11px;
+    color: black;
+    transition: 0.4s ease-in-out;
+}
+
+.cl-14:hover {
+    background: #3472ef;
+    color: white;
+}
+
+.cl-15 {
+    display: flex;
+    color: red;
+    align-items: center;
+    font-size: 12px;
+    justify-content: center;
+}
+
+.cl-15 svg {
+    stroke-width: 1.1px;
+    width: 21px;
+    margin-left: 5px;
+}
+
+.cl-21 {
+    min-height: 90vh;
+}
+
+.contact {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.71), rgba(0, 0, 0, 0.8)), url("https://images.pexels.com/photos/14056077/pexels-photo-14056077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.cl-20 {
+    color: white;
+}
+
+.cl-21 form {
+    width: 50%;
+    min-width: 300px;
+    margin: 40px auto;
+    direction: rtl;
+    background: rgb(242 242 242 / 32%);
+    padding: 15px;
+    border-radius: 5px;
+    overflow: hidden;
+    user-select: none;
+}
+
+.cl-21 form .input_field {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.cl-21 form .input_field input,
+.cl-21 form .input_field select,
+.cl-21 form .input_field textarea {
+    background: rgb(242 242 242 / 32%);
+    outline: 0;
+    border-radius: 5px;
+    padding: 10px 13px;
+    border: 0.4px solid white;
+    width: 100%;
+    min-height: 30px;
+    color: white;
+    font-size: 15px;
+
+}
+
+.cl-21 form .input_field label {
+    display: block;
+    color: white;
+    margin: 8px 0;
+}
+
+.cl-21 form button {
+    width: 97%;
+    margin: 8px auto;
+    outline: 0;
+    padding: 10px 13px;
+    border: none;
+    background: none;
+    border-bottom: 0.4px solid white;
+    cursor: pointer;
+    color: white;
+    font-size: 18px;
+    transition: 0.4s ease-in-out;
+}
+
+.cl-21 form button:hover {
+    background: rgb(242 242 242 / 32%);
+    border-radius: 5px;
+
+}
+
+.cl-22 {
+    width: 100%;
+    text-align: center;
+    direction: rtl;
+}
+
+.cl-23 {
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    direction: rtl;
+}
+
+.cl-11 {
+    display: flex;
+    align-items: center;
+}
+
+.cl-24 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #b3ccff;
+    color: white;
+    margin-left: 4px;
+    font-size: 34px;
+}
+
+.cl-25 h2 {
+    text-align: center;
+    width: 100%;
+    padding: 5px;
+    font-size: 17px;
+    justify-content: center;
+}
+
+.cl-25 {
+    padding: 0 3px;
+}
+
+.borders .text,
+.data .text {
+    background-color: #3472ef;
+    padding: 10px;
+    width: 95%;
+    margin: auto;
+    border-radius: 8px;
+}
+
+.borders .text {
+    background-color: #5484e5;
+}
+
+.borders .text p,
+.data .text p {
+    color: white !important;
+    font-size: 14px;
+}
+
+.personality {
+    /* padding: 10px; */
+    direction: rtl;
+}
+
+.privacy>div {
+    overflow: hidden;
+}
+
+.cl-28 {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0;
+    list-style-position: inside;
+
+}
+
+.cl-28 li {
+    min-width: 300px;
+    max-width: 440px;
+}
+
+.cl-26 {
+    color: white !important;
+}
+
+.personality-data p {
+    background: #3472ef;
+    padding: 7px;
+    border-radius: 5px;
+    white-space: wrap;
+    max-width: 100%;
+    margin: 9px 0 5px;
+    font-size: 14px;
+}
+
+.cl-27 {
+    background: grey;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    margin: 3px 0;
+}
+
+.cl-27 li {
+    font-size: 12px !important;
+    font-weight: 400;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.cl-29 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    direction: rtl;
+    width: 95%;
+    min-height: 55vh;
+    text-align: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.71), rgba(0, 0, 0, 0.8)), url("https://images.pexels.com/photos/14062179/pexels-photo-14062179.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    margin: 10px auto;
+    border-radius: 9px;
+}
+
+.cl-30 {
+    width: 98.7%;
+    margin: auto;
+    border-radius: 8px;
+    padding: 10px;
+    overflow: hidden;
+    box-shadow: -1.9px 3px 14px -3px grey;
+}
+
+.he-1{
+    min-height: 72vh;
+}
